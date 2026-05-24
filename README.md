@@ -51,7 +51,7 @@ Les modèles sont évalués avec trois indicateurs :
 
 - MAE : erreur absolue moyenne 
 - RMSE : racine de l'erreur quadratique moyenne 
-- R² : part de la variation du prix expliquée par le modèle
+- R2 : part de la variation du prix expliquée par le modèle
 
 ## Résultats
 
@@ -61,7 +61,7 @@ Dans ce projet, la régression linéaire obtient de meilleurs résultats que le 
 
 - MAE : environ 19 963 
 - RMSE : environ 25 201 
-- R² : environ 0,974
+- R2 : environ 0,974
 
 Le Random Forest obtient aussi de bons résultats, avec un R² d'environ 0,952, mais son erreur est plus élevée.
 Ce résultat est cohérent, car la base simulée a été construite avec une relation assez linéaire entre les caractéristiques des logements et leur prix.
