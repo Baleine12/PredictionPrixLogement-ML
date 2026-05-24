@@ -8,7 +8,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 
-# 1 Création d'une base simulée
+# Création d'une base simulée
 
 np.random.seed(42)
 
@@ -69,7 +69,7 @@ print("Nombre d'observations :", len(df))
 print("Statistiques descriptives :")
 print(df.describe())
 
-# 2 Graphiques simples
+# Graphiques simples
 
 plt.figure(figsize=(7, 5))
 plt.scatter(df["surface"], df["prix"], alpha=0.4)
@@ -99,7 +99,7 @@ plt.tight_layout()
 plt.savefig("sorties/graphiques/prix_moyen_quartier.png")
 plt.close()
 
-# 3 Préparation des variables
+# Préparation des variables
 
 df_model = pd.get_dummies(df, columns=["quartier"], drop_first=True)
 
@@ -113,7 +113,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     random_state=42
 )
 
-# 4 Régression linéaire
+# Régression linéaire
 
 
 modele_lineaire = LinearRegression()
@@ -130,7 +130,7 @@ print("R2 :", round(r2_lineaire, 3))
 
 
 
-# 5 Random Forest
+# Random Forest
 
 
 modele_rf = RandomForestRegressor(
@@ -154,7 +154,7 @@ print("R² :", round(r2_rf, 3))
 
 
 
-# 6 Comparaison des modèles
+# Comparaison des modèles
 
 
 resultats = pd.DataFrame({
@@ -170,7 +170,7 @@ print(resultats)
 resultats.to_csv("sorties/comparaison_modeles.csv", index=False)
 
 
-# 7 Importance des variables
+# Importance des variables
 
 
 importance = pd.DataFrame({
@@ -195,7 +195,7 @@ plt.close()
 
 
 
-# 8. Prix réels vs prix prédits
+# Prix réels vs prix prédits
 
 
 plt.figure(figsize=(7, 5))
@@ -209,7 +209,7 @@ plt.close()
 
 
 
-# 9. Export des prédictions
+# Export des prédictions
 
 
 predictions = pd.DataFrame({
@@ -219,5 +219,3 @@ predictions = pd.DataFrame({
 })
 
 predictions.to_csv("sorties/predictions_prix.csv", index=False)
-
-print("Projet terminé avec succès.")
